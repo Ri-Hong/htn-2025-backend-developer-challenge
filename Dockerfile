@@ -4,15 +4,14 @@ FROM node:18-alpine
 # Set working directory inside container
 WORKDIR /app
 
-# Copy package files first (for better caching)
-COPY package*.json ./
-RUN npm install
-
-# Copy prisma files separately (before the rest of the app)
+# Copy prisma files
 COPY prisma ./prisma/
 
-# Generate Prisma client
-RUN npx prisma generate
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
 
 # Copy the rest of the app
 COPY . .
