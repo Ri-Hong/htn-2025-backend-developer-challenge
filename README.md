@@ -151,14 +151,14 @@ The database schema is defined in [`prisma/schema.prisma`](prisma/schema.prisma)
 - **Update Handling:**
 
   - Updatable user fields:
-    - name
-    - email
-    - phone
-    - badge_code
+    - `name`
+    - `email`
+    - `phone`
+    - `badge_code`
   - Protected fields (cannot be modified):
-    - id
-    - updated_at
-    - scans
+    - `id`
+    - `updated_at`
+    - `scans`
 
 - **Activity Scanning:**
 
