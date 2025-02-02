@@ -23,4 +23,4 @@ RUN npm run build
 EXPOSE 3000
 
 # Run migrations, seed data, and start the app
-CMD npx prisma migrate deploy && npx ts-node prisma/seed.ts && npm start
+CMD npx prisma migrate deploy && npx ts-node src/seed.ts && npm start
