@@ -5,6 +5,7 @@ Hack the North 2025 Backend Developer Challenge
 ## Table of Contents
 
 - [Tech Stack](#tech-stack)
+- [Live Demo](#live-demo)
 - [Setup Instructions](#setup-instructions)
 - [Running Tests](#running-tests)
 - [Database Access](#database-access)
@@ -25,10 +26,21 @@ Hack the North 2025 Backend Developer Challenge
 | Testing           | Jest, Supertest                     |
 | Containerization  | Docker, Docker Compose              |
 | Development Tools | Node.js, npm                        |
+| Deployment        | Railway                             |
 
 ---
 
-## Setup Instructions
+## Live Demo
+
+The API is deployed and available at:  
+[https://htn-2025-backend-dev-challenge-production.up.railway.app](https://htn-2025-backend-dev-challenge-production.up.railway.app)
+
+API Documentation (Swagger UI) for the deployed version:  
+[https://htn-2025-backend-dev-challenge-production.up.railway.app/api-docs](https://htn-2025-backend-dev-challenge-production.up.railway.app/api-docs)
+
+---
+
+## Local Setup Instructions
 
 1. Clone the repository:
 
