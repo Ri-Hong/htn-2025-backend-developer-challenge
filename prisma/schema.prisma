@@ -1,0 +1,39 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["linux-musl-arm64-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id @default(uuid())
+  name         String
+  email        String    @unique
+  phone        String?
+  badge_code   String    @unique
+  updated_at   DateTime  @updatedAt
+  scans        Scan[]
+  checked_in   Boolean   @default(false)
+  check_in_at  DateTime?
+  check_out_at DateTime?
+}
+
+model Activity {
+  id        String @id @default(uuid())
+  name      String @unique
+  category  String
+  scans     Scan[]
+  max_scans Int?
+}
+
+model Scan {
+  id         String   @id @default(uuid())
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String
+  activity   Activity @relation(fields: [activityId], references: [id])
+  activityId String
+  scanned_at DateTime @default(now())
+}
