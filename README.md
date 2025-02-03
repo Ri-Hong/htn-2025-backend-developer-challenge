@@ -49,13 +49,7 @@ API Documentation (Swagger UI) for the deployed version:
    cd htn-2025-backend-developer-challenge
    ```
 
-2. Create a `.env` file in the root directory with the following content:
-
-   ```
-   DATABASE_URL="postgresql://postgres:password@postgres:5432/hackathon"
-   ```
-
-3. Start the Docker containers:
+2. Start the Docker containers:
 
    ```bash
    docker-compose up -d
@@ -75,14 +69,26 @@ API Documentation (Swagger UI) for the deployed version:
 
 ## Running Tests
 
-Run the test suite using:
+You can run tests either locally or within Docker:
+
+### Local Testing
+
+1. Install dependencies first:
+
+   ```bash
+   npm install
+   ```
+
+2. Run the test suite:
+
+   ```bash
+   npm test
+   ```
+
+### Testing in Docker
 
 ```bash
-# From the project root directory
-npm test
-
-# To run tests in watch mode
-npm run test:watch
+docker exec htn_backend npm test
 ```
 
 ---

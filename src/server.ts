@@ -12,7 +12,7 @@ const { swaggerUi, swaggerSpec } = require("./swagger");
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hack the North Backend is running with TypeScript!");
+  res.send("Visit /api-docs to see the API documentation!");
 });
 
 /**
